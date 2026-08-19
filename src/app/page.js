@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
 import Hero from "@/components/Hero";
 import Stack from "@/components/Stack";
 import Skills from "@/components/Skills";
@@ -21,8 +20,7 @@ export default function Home() {
       
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         <Header />
-        <Sidebar />
-        <main className="lg:ml-64 pt-32 pb-16">
+        <main className="pt-28 pb-16">
           <div className="max-w-[1280px] mx-auto px-6">
             <Hero />
             <Stack />

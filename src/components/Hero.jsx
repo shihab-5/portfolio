@@ -94,13 +94,16 @@ const Hero = () => {
           >
             &gt; Let's Connect
           </motion.button>
-          <motion.button 
+          <motion.a 
+            href="https://drive.google.com/file/d/1jdWRinVUx5yf8GqUoDtmusDIqLQM1mVi/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(57, 255, 20, 0.1)" }}
             whileTap={{ scale: 0.95 }}
-            className="border border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm"
+            className="border border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm inline-flex items-center gap-2"
           >
-            [ See My Work ]
-          </motion.button>
+            [ View Resume ]
+          </motion.a>
         </div>
       </div>
 

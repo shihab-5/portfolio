@@ -6,27 +6,27 @@ import Image from 'next/image';
 const Projects = () => {
   const projects = [
     {
-      title: 'Sunnymart',
-      description: 'Comprehensive E-commerce platform with real-time asset management and secure checkout.',
-      live: 'https://suunymart-orpin.vercel.app/',
-      repo: 'https://github.com/shihab-5/suunymart',
-      image: '/sunnymart-mockup.png',
+      title: 'HealSync',
+      description: 'Healthcare management platform connecting patients with medical professionals through real-time scheduling & diagnostic records.',
+      live: 'https://healsync-three.vercel.app',
+      repo: 'https://github.com/shihab-5/healsync',
+      image: '/healsync-cover.jpg',
       color: 'rgba(57, 255, 20, 0.4)'
     },
     {
-      title: 'Kee-keeper',
-      description: 'Secure credential vault with AES-256 encryption patterns and intuitive UI.',
-      live: 'https://rococo-dolphin-50e67f.netlify.app/',
-      repo: 'https://github.com/shihab-5/kee-keeper',
-      image: '/keekeeper-mockup.png',
+      title: 'Tourora',
+      description: 'Modern, feature-rich travel booking & destination discovery platform built with Next.js 16, TypeScript, & Tailwind CSS.',
+      live: 'https://tourora.vercel.app',
+      repo: 'https://github.com/shihab-5/tourora',
+      image: '/tourora-cover.jpg',
       color: 'rgba(0, 241, 253, 0.4)'
     },
     {
-      title: 'Book-vibe',
-      description: 'Social discovery platform for bibliophiles with community logs and algorithmic vibes.',
-      live: 'https://spectacular-sprinkles-2d4d8a.netlify.app/',
-      repo: 'https://github.com/shihab-5/book-vibe',
-      image: null, // We'll use the CSS fallback
+      title: 'DocTime',
+      description: 'Doctor appointment manager web app with secure authentication, intuitive dashboard, & streamlined booking.',
+      live: 'https://doctime-delta.vercel.app',
+      repo: 'https://github.com/shihab-5/doctime',
+      image: 'https://images.pexels.com/photos/11370618/pexels-photo-11370618.jpeg',
       color: 'rgba(255, 171, 243, 0.4)'
     },
   ];

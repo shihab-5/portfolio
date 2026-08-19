@@ -4,14 +4,16 @@ import { motion } from 'framer-motion';
 
 const Stack = () => {
   const tools = [
+    { icon: 'code_blocks', label: 'Next.js 16' },
+    { icon: 'terminal', label: 'TypeScript' },
     { icon: 'database', label: 'MongoDB' },
     { icon: 'api', label: 'Express.js' },
     { icon: 'deployed_code', label: 'React.js' },
     { icon: 'javascript', label: 'Node.js' },
-    { icon: 'schema', label: 'Mongoose' },
-    { icon: 'token', label: 'JWT / Auth' },
-    { icon: 'storage', label: 'Redux / Context' },
-    { icon: 'cloud_upload', label: 'Cloudinary' },
+    { icon: 'key', label: 'BetterAuth / JWT' },
+    { icon: 'payments', label: 'Stripe' },
+    { icon: 'local_fire_department', label: 'Firebase' },
+    { icon: 'style', label: 'Tailwind / Shadcn' },
   ];
 
   return (
