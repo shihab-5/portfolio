@@ -77,8 +77,8 @@ const Skills = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xs text-secondary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">// TECHNICAL_CAPABILITIES</h2>
-          <h3 className="text-3xl font-bold font-display uppercase italic text-white">Skills & Technologies</h3>
+          <h2 className="text-xs text-secondary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">{"// TECHNICAL_CAPABILITIES"}</h2>
+          <h3 className="text-3xl md:text-4xl font-bold font-display uppercase italic text-cyber-gradient text-cyber-glow">Skills & Technologies</h3>
         </motion.div>
       </div>
 
@@ -142,13 +142,13 @@ const Skills = () => {
       >
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
           <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-tertiary-fixed-dim text-2xl">code</span>
+            <span className="material-symbols-outlined text-primary-fixed-dim text-2xl">code</span>
             <div>
-              <h3 className="text-xl font-bold font-display text-tertiary-fixed-dim uppercase italic">Competitive Programming</h3>
-              <p className="text-on-surface-variant font-mono text-xs">Solved 300+ coding problems across LeetCode & Codeforces</p>
+              <h3 className="text-xl font-bold font-display text-cyber-gradient text-cyber-glow uppercase italic">Competitive Programming</h3>
+              <p className="text-on-surface-variant font-mono text-xs">Solved 300+ coding problems across LeetCode &amp; Codeforces</p>
             </div>
           </div>
-          <span className="text-xs font-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/30 px-3 py-1 rounded-full font-bold">
+          <span className="text-xs font-mono bg-primary-fixed-dim/10 text-primary-fixed-dim border border-primary-fixed-dim/30 px-3 py-1 rounded-full font-bold">
             300+_PROBLEMS_SOLVED
           </span>
         </div>
@@ -159,14 +159,12 @@ const Skills = () => {
               name: 'Codeforces', 
               user: 'shihab544', 
               href: 'https://codeforces.com/profile/shihab544', 
-              color: '#ffabf3',
               icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeforces/codeforces-original.svg' 
             },
             { 
               name: 'LeetCode', 
               user: 'shihab544', 
               href: 'https://leetcode.com/u/shihab544/', 
-              color: '#ffabf3',
               icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leetcode/leetcode-original.svg' 
             },
           ].map((platform) => (
@@ -175,8 +173,8 @@ const Skills = () => {
               href={platform.href} 
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ x: 8, backgroundColor: "rgba(255, 171, 243, 0.1)" }}
-              className="flex justify-between items-center p-4 bg-white/5 rounded-xl transition-all border-l-4 border-tertiary-fixed-dim group"
+              whileHover={{ x: 8, backgroundColor: "rgba(0, 229, 255, 0.08)" }}
+              className="flex justify-between items-center p-4 bg-white/5 rounded-xl transition-all border-l-4 border-primary-fixed-dim group"
             >
               <div className="flex items-center gap-3">
                 <img 
@@ -187,7 +185,7 @@ const Skills = () => {
                 />
                 <span className="font-bold font-mono text-xs uppercase tracking-widest text-white">{platform.name}</span>
               </div>
-              <span className="text-tertiary-fixed-dim font-mono text-xs font-bold flex items-center gap-1">
+              <span className="text-primary-fixed-dim font-mono text-xs font-bold flex items-center gap-1">
                 @{platform.user}
                 <span className="material-symbols-outlined text-[14px]">open_in_new</span>
               </span>

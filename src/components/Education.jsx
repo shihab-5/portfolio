@@ -70,7 +70,7 @@ const Education = () => {
   return (
     <section ref={sectionRef} className="mb-16 py-10" id="quals">
       <div className="mb-16 text-center">
-        <h3 className="text-4xl font-bold font-display uppercase tracking-widest italic text-primary-fixed-dim neon-text-glow">
+        <h3 className="text-4xl font-bold font-display uppercase tracking-widest italic text-cyber-gradient text-cyber-glow">
           Academic_Protocol
         </h3>
         <div className="w-32 h-[2px] bg-primary-fixed-dim/30 mx-auto mt-4 relative overflow-hidden">
@@ -89,7 +89,7 @@ const Education = () => {
           {qualifications.map((qual, index) => (
             <div key={index} className="relative pl-24 qual-card group">
               {/* Timeline Dot */}
-              <div className={`absolute left-6 top-2 w-4 h-4 rounded-full z-10 transition-all duration-500 ${qual.active ? 'bg-primary-fixed-dim shadow-[0_0_15px_#39ff14] scale-125' : 'bg-outline group-hover:bg-primary-fixed-dim group-hover:shadow-[0_0_10px_#39ff14]'}`}>
+              <div className={`absolute left-6 top-2 w-4 h-4 rounded-full z-10 transition-all duration-500 ${qual.active ? 'bg-primary-fixed-dim shadow-[0_0_15px_#00e5ff] scale-125' : 'bg-outline group-hover:bg-primary-fixed-dim group-hover:shadow-[0_0_10px_#00e5ff]'}`}>
                 {qual.active && <div className="absolute inset-0 bg-primary-fixed-dim rounded-full animate-ping opacity-50"></div>}
               </div>
 

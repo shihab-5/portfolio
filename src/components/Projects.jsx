@@ -11,7 +11,7 @@ const Projects = () => {
       live: 'https://healsync-three.vercel.app',
       repo: 'https://github.com/shihab-5/healsync',
       image: '/healsync-cover.jpg',
-      color: 'rgba(57, 255, 20, 0.4)'
+      color: 'rgba(0, 229, 255, 0.4)'
     },
     {
       title: 'Tourora',
@@ -39,8 +39,8 @@ const Projects = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xs text-primary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">// DEPLOYED_ASSETS</h2>
-          <h3 className="text-3xl font-bold font-display uppercase italic text-white">Selected Operations</h3>
+          <h2 className="text-xs text-primary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">{"// DEPLOYED_ASSETS"}</h2>
+          <h3 className="text-3xl md:text-4xl font-bold font-display uppercase italic text-cyber-gradient text-cyber-glow">Selected Operations</h3>
         </motion.div>
         <motion.a 
           initial={{ opacity: 0 }}
@@ -91,12 +91,12 @@ const Projects = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
               <motion.div 
                 className="absolute inset-0 bg-primary-fixed-dim/5 opacity-0 group-hover:opacity-100 transition-opacity"
-                animate={{ background: ["rgba(57,255,20,0.02)", "rgba(0,241,253,0.02)", "rgba(57,255,20,0.02)"] }}
+                animate={{ background: ["rgba(0,229,255,0.03)", "rgba(0,190,255,0.03)", "rgba(0,229,255,0.03)"] }}
                 transition={{ duration: 4, repeat: Infinity }}
               />
               
               {/* Scanline Effect */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary-fixed-dim/20 shadow-[0_0_10px_#39ff14] animate-scan opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary-fixed-dim/20 shadow-[0_0_10px_#00e5ff] animate-scan opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
             
             <div className="p-6 relative z-10">
@@ -106,7 +106,7 @@ const Projects = () => {
                   transition={{ duration: 2, repeat: Infinity }}
                   className={`w-1.5 h-1.5 rounded-full bg-primary-fixed-dim`}
                 ></motion.div>
-                <h4 className="text-xl font-bold text-primary-fixed-dim font-display tracking-tight uppercase italic">{project.title}</h4>
+                <h4 className="text-xl font-bold text-cyber-gradient font-display tracking-tight uppercase italic">{project.title}</h4>
               </div>
               <p className="text-on-surface-variant text-[11px] mb-8 font-mono leading-relaxed h-10 overflow-hidden line-clamp-2">
                 {project.description}

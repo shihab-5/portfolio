@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="w-full py-10 mt-16 border-t border-white/5 bg-surface-container-lowest/50">
       <div className="flex flex-col md:flex-row justify-between items-center px-gutter max-w-[1280px] mx-auto">
         <div className="text-xs text-primary-fixed-dim mb-4 md:mb-0 font-mono font-bold tracking-tighter">
-          SHIHAB_UL_ISLAM // NEON_ARCHIVE
+          SHIHABUL ISLAM // NEON_ARCHIVE
         </div>
         
         <div className="flex gap-10 mb-4 md:mb-0">

@@ -65,7 +65,7 @@ const Loader = ({ onComplete }) => {
         <div className="w-full h-[2px] bg-white/10 relative overflow-hidden">
           <div 
             ref={progressRef}
-            className="absolute top-0 left-0 h-full bg-primary-fixed-dim shadow-[0_0_15px_#39ff14] transition-all duration-100"
+            className="absolute top-0 left-0 h-full bg-primary-fixed-dim shadow-[0_0_15px_#00e5ff] transition-all duration-100"
             style={{ width: '0%' }}
           ></div>
         </div>
@@ -79,7 +79,7 @@ const Loader = ({ onComplete }) => {
       {/* Background Grid Lines (Subtle) */}
       <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
         <div className="w-full h-full" style={{ 
-          backgroundImage: 'linear-gradient(rgba(57, 255, 20, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.1) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(0, 229, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 229, 255, 0.1) 1px, transparent 1px)',
           backgroundSize: '40px 40px'
         }}></div>
       </div>

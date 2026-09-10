@@ -14,7 +14,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata = {
-  title: "SHIHAB_UL_ISLAM // NEON_ARCHIVE",
+  title: "SHIHABUL ISLAM // NEON_ARCHIVE",
   description: "Frontend Developer and Full Stack enthusiast specializing in high-performance digital systems.",
 };
 
@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        <link 
-          rel="stylesheet" 
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
       </head>
       <body

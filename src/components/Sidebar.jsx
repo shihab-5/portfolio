@@ -88,7 +88,7 @@ const Sidebar = () => {
           <motion.div 
             animate={{ x: ["-100%", "100%"] }}
             transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute top-0 left-0 h-full w-1/3 bg-primary-fixed-dim shadow-[0_0_10px_#39ff14]"
+            className="absolute top-0 left-0 h-full w-1/3 bg-primary-fixed-dim shadow-[0_0_12px_#00e5ff]"
           />
         </div>
       </div>

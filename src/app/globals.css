@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Neon Archive Color Palette */
-  --color-background: #131313;
-  --color-primary: #efffe3;
-  --color-primary-container: #39ff14;
-  --color-primary-fixed: #79ff5b;
-  --color-primary-fixed-dim: #2ae500;
-  --color-on-primary: #053900;
-  --color-on-primary-container: #107100;
-  --color-on-primary-fixed: #022100;
-  --color-on-primary-fixed-variant: #095300;
+  /* Cyber Cyan Palette */
+  --color-background: #0f1318;
+  --color-primary: #e0f9ff;
+  --color-primary-container: #00e5ff;
+  --color-primary-fixed: #7df9ff;
+  --color-primary-fixed-dim: #00e5ff;
+  --color-on-primary: #00222a;
+  --color-on-primary-container: #004554;
+  --color-on-primary-fixed: #00171d;
+  --color-on-primary-fixed-variant: #003a47;
 
   --color-secondary: #dcfdff;
   --color-secondary-container: #00f1fd;
@@ -30,24 +30,24 @@
   --color-on-tertiary-fixed: #380038;
   --color-on-tertiary-fixed-variant: #810081;
 
-  --color-surface: #131313;
-  --color-surface-dim: #131313;
-  --color-surface-bright: #393939;
-  --color-surface-variant: #353534;
-  --color-surface-container: #201f1f;
-  --color-surface-container-low: #1c1b1b;
-  --color-surface-container-high: #2a2a2a;
-  --color-surface-container-highest: #353534;
-  --color-surface-container-lowest: #0e0e0e;
-  --color-on-surface: #e5e2e1;
-  --color-on-surface-variant: #baccb0;
-  --color-surface-tint: #2ae500;
+  --color-surface: #0f1318;
+  --color-surface-dim: #0f1318;
+  --color-surface-bright: #262f3a;
+  --color-surface-variant: #202731;
+  --color-surface-container: #161c24;
+  --color-surface-container-low: #12171e;
+  --color-surface-container-high: #1c232d;
+  --color-surface-container-highest: #232b37;
+  --color-surface-container-lowest: #0a0d12;
+  --color-on-surface: #e5eef6;
+  --color-on-surface-variant: #8da2b5;
+  --color-surface-tint: #00e5ff;
 
-  --color-outline: #85967c;
-  --color-outline-variant: #3c4b35;
-  --color-inverse-surface: #e5e2e1;
-  --color-inverse-on-surface: #313030;
-  --color-inverse-primary: #106e00;
+  --color-outline: #385666;
+  --color-outline-variant: #1a2f3b;
+  --color-inverse-surface: #e5eef6;
+  --color-inverse-on-surface: #1a232c;
+  --color-inverse-primary: #009cb8;
 
   --color-error: #ffb4ab;
   --color-error-container: #93000a;
@@ -77,33 +77,62 @@
   --animate-spin-slow: spin-slow 20s linear infinite;
 }
 
+:root {
+  --color-primary: #e0f9ff;
+  --color-primary-container: #00e5ff;
+  --color-primary-fixed: #7df9ff;
+  --color-primary-fixed-dim: #00e5ff;
+  --color-on-primary: #00222a;
+  --color-on-primary-container: #004554;
+  --color-on-primary-fixed: #00171d;
+  --color-on-primary-fixed-variant: #003a47;
+  --color-surface-tint: #00e5ff;
+  --color-outline: #385666;
+  --color-outline-variant: #1a2f3b;
+  --color-inverse-primary: #009cb8;
+}
+
 @layer utilities {
   .glass-panel {
-    background: rgba(20, 20, 20, 0.4);
+    background: rgba(15, 19, 24, 0.6);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(42, 229, 0, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.15);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .glass-panel:hover {
-    background: rgba(20, 20, 20, 0.6);
-    border-color: rgba(42, 229, 0, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 15px rgba(42, 229, 0, 0.1);
+    background: rgba(15, 19, 24, 0.8);
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.2);
   }
   .neon-text-glow {
-    text-shadow: 0 0 10px rgba(42, 229, 0, 0.6);
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.8), 0 0 25px rgba(0, 190, 255, 0.4);
   }
   .neon-border-glow {
-    box-shadow: 0 0 20px rgba(42, 229, 0, 0.3);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
   }
   .scanline {
     width: 100%;
     height: 1px;
-    background: linear-gradient(to bottom, transparent, rgba(42, 229, 0, 0.05), transparent);
+    background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.1), transparent);
     position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
     z-index: 10;
+  }
+  .text-cyber-gradient {
+    background: linear-gradient(90deg, #00ff87 0%, #00e5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+  .bg-cyber-gradient {
+    background: linear-gradient(90deg, #00ff87 0%, #00e5ff 100%);
+  }
+  .text-cyber-glow {
+    filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.45));
   }
   
   .bg-grid {

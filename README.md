@@ -1,4 +1,4 @@
-# SHIHAB_UL_ISLAM // NEON_ARCHIVE
+# SHIHABUL ISLAM // NEON_ARCHIVE
 
 [![Live Demo](https://img.shields.io/badge/LIVE_DEMO-Check_it_out-39ff14?style=for-the-badge&logo=netlify&logoColor=black)](https://monumental-malasada-dc9664.netlify.app/)
 

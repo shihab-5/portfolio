@@ -5,8 +5,8 @@ const Navbar = () => {
     <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50">
       <div className="glass-nav rounded-none px-6 py-3 flex items-center justify-between border-t-4 border-t-primary-container">
         {/* Logo */}
-        <div className="text-lg font-bold tracking-tighter uppercase font-display neon-text-green text-primary-container">
-          //LEO_CARTER_01
+        <div className="text-lg font-bold tracking-tighter uppercase font-display text-cyber-gradient text-cyber-glow">
+          {"//LEO_CARTER_01"}
         </div>
         
         {/* Nav Links */}

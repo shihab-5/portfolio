@@ -24,8 +24,8 @@ const Stack = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-xs text-primary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">// CORE_INFRASTRUCTURE</h2>
-          <h3 className="text-3xl font-bold font-display uppercase italic">MERN Stack Ecosystem</h3>
+          <h2 className="text-xs text-primary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">{"// CORE_INFRASTRUCTURE"}</h2>
+          <h3 className="text-3xl md:text-4xl font-bold font-display uppercase italic text-cyber-gradient text-cyber-glow">MERN Stack Ecosystem</h3>
         </motion.div>
       </div>
       
@@ -39,15 +39,15 @@ const Stack = () => {
             transition={{ delay: i * 0.1 }}
             whileHover={{ 
               scale: 1.05, 
-              borderColor: "rgba(57, 255, 20, 0.4)",
-              backgroundColor: "rgba(57, 255, 20, 0.05)"
+              borderColor: "rgba(0, 229, 255, 0.5)",
+              backgroundColor: "rgba(0, 229, 255, 0.08)"
             }}
             className="glass-panel p-6 flex flex-col items-center justify-center gap-4 group cursor-default border border-white/5 transition-colors duration-500"
           >
             <motion.span 
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.8 }}
-              className="material-symbols-outlined text-[32px] text-primary-fixed-dim group-hover:drop-shadow-[0_0_10px_#39ff14]"
+              className="material-symbols-outlined text-[32px] text-primary-fixed-dim group-hover:drop-shadow-[0_0_12px_#00e5ff]"
             >
               {tool.icon}
             </motion.span>

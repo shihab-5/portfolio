@@ -12,15 +12,17 @@ const Hero = () => {
   const [roleIndex, setRoleIndex] = useState(0);
 
   const roles = [
-    { text: "Frontend Developer", color: "text-primary-fixed-dim" },
-    { text: "Problem Solver", color: "text-secondary-fixed-dim" },
-    { text: "Full Stack Enthusiast", color: "text-tertiary-fixed-dim" }
+    "Full-Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "AI-Assisted Software Engineer",
+    "Problem Solver",
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 3000);
+    }, 2800);
     return () => clearInterval(timer);
   }, []);
 
@@ -60,47 +62,67 @@ const Hero = () => {
   return (
     <section ref={heroRef} className="relative mb-16 py-10 grid grid-cols-1 md:grid-cols-12 gap-10 items-center" id="about">
       <div className="md:col-span-7 z-10">
-        <div className="mb-4 hero-line">
-          <span className="text-xs text-primary-fixed-dim bg-primary-fixed-dim/10 px-4 py-1 rounded-full border border-primary-fixed-dim/30 font-mono">
-            SYSTEM_OPERATOR_ONLINE // V.2.1
+        <div className="mb-5 hero-line">
+          <span className="text-xs text-primary-fixed-dim bg-primary-fixed-dim/10 px-4 py-1 rounded-full border border-primary-fixed-dim/30 font-mono tracking-widest">
+            {"> BUILDING_FULL_STACK_SYSTEMS"}
           </span>
         </div>
-        <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold mb-6 font-display leading-tight uppercase italic">
-          <div className="hero-line">Crafting</div>
-          <div className="hero-line text-primary-fixed-dim neon-text-glow">Digital Realities.</div>
+        <h1 ref={titleRef} className="text-5xl md:text-6xl font-bold mb-6 font-display leading-tight">
+          <div className="hero-line text-on-surface">
+            I&apos;m <span className="text-cyber-gradient text-cyber-glow italic">Shihabul Islam</span>
+          </div>
+          <div className="hero-line text-cyber-gradient text-cyber-glow uppercase italic text-3xl md:text-4xl mt-3 leading-snug">
+            — I turn real-world problems<br />into working software.
+          </div>
         </h1>
-        <div ref={textRef} className="text-lg text-on-surface-variant max-w-xl mb-10 leading-relaxed font-mono h-12">
-          I am a{" "}
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={roles[roleIndex].text}
-              initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
-              transition={{ duration: 0.5 }}
-              className={`font-bold underline decoration-white/10 ${roles[roleIndex].color}`}
-            >
-              {roles[roleIndex].text}
-            </motion.span>
-          </AnimatePresence>
-          <br />
-          I turn complex requirements into high-performance digital systems.
+
+        {/* Animated role line */}
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-6 font-mono text-sm">
+          <span className="text-on-surface-variant/50 tracking-widest shrink-0">
+            {"// CURRENTLY_OPERATING_AS:"}
+          </span>
+          <div className="relative h-6 overflow-hidden flex items-center flex-1 min-w-0">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={roles[roleIndex]}
+                initial={{ y: 20, opacity: 0, filter: "blur(6px)" }}
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                exit={{ y: -20, opacity: 0, filter: "blur(6px)" }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
+                className="absolute whitespace-nowrap text-primary-fixed-dim font-bold tracking-wide"
+              >
+                {roles[roleIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+          <motion.span
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
+            className="text-primary-fixed-dim font-bold text-base shrink-0"
+          >
+            _
+          </motion.span>
+        </div>
+
+        <div ref={textRef} className="text-base text-on-surface-variant max-w-xl mb-10 leading-relaxed font-mono">
+          Responsive interfaces, scalable APIs,<br />
+          and the databases that tie it all together.
         </div>
         <div ref={ctaRef} className="flex flex-wrap gap-4">
           <motion.button 
-            whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(57, 255, 20, 0.4)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(0, 229, 255, 0.6)" }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary-container text-on-primary px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm shadow-[0_0_10px_rgba(57,255,20,0.2)]"
+            className="bg-cyber-gradient text-[#00171d] px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:brightness-110"
           >
-            &gt; Let's Connect
+            &gt; Let&apos;s Connect
           </motion.button>
           <motion.a 
             href="https://drive.google.com/file/d/1jdWRinVUx5yf8GqUoDtmusDIqLQM1mVi/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(57, 255, 20, 0.1)" }}
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 229, 255, 0.12)", borderColor: "#00e5ff" }}
             whileTap={{ scale: 0.95 }}
-            className="border border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm inline-flex items-center gap-2"
+            className="border border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-bold uppercase tracking-widest rounded-lg transition-all font-mono text-sm inline-flex items-center gap-2 hover:text-primary-container"
           >
             [ View Resume ]
           </motion.a>
@@ -130,7 +152,7 @@ const Hero = () => {
           <motion.div 
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-fixed-dim shadow-[0_0_50px_rgba(42,229,0,0.3)] group cursor-pointer"
+            className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary-fixed-dim shadow-[0_0_50px_rgba(0,229,255,0.3)] group cursor-pointer"
           >
             <Image 
               src="/Gemini_Generated_Image_68545u68545u6854.jpg" 
