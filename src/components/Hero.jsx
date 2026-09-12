@@ -41,15 +41,6 @@ const Hero = () => {
       )
     },
     {
-      name: "X (Twitter)",
-      href: "https://x.com",
-      icon: (
-        <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-      )
-    },
-    {
       name: "Instagram",
       href: "https://instagram.com",
       icon: (
@@ -214,10 +205,10 @@ const Hero = () => {
               />
 
               {/* Top Right Live Status Pill */}
-              <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-emerald-500/30 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping absolute" />
-                <span className="w-2 h-2 rounded-full bg-emerald-400 relative" />
-                <span className="text-[10px] font-mono text-emerald-300 font-bold uppercase tracking-wider">AVAILABLE</span>
+              <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md border border-primary-fixed-dim/40 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-primary-fixed-dim animate-ping absolute" />
+                <span className="w-2 h-2 rounded-full bg-primary-fixed-dim relative" />
+                <span className="text-[10px] font-mono text-primary-fixed-dim font-bold uppercase tracking-wider">AVAILABLE</span>
               </div>
 
               {/* Cyber Scanline Overlay */}
@@ -232,7 +223,7 @@ const Hero = () => {
               </h2>
 
               {/* Role */}
-              <div className="text-xs font-mono font-bold tracking-widest text-emerald-400 uppercase mt-1">
+              <div className="text-xs font-mono font-bold tracking-widest text-primary-fixed-dim uppercase mt-1">
                 AI & FULL-STACK DEVELOPER
               </div>
 

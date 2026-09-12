@@ -69,25 +69,6 @@ const About = () => {
             <p className="text-on-surface-variant font-mono text-sm leading-relaxed">
               When I&apos;m not writing code, I sharpen my analytical thinking through competitive programming, exploring new developer tooling, and staying on the cutting edge of AI-assisted software engineering.
             </p>
-
-            <div className="mt-6 pt-6 border-t border-white/5 flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="bg-primary-fixed-dim/15 hover:bg-primary-fixed-dim text-primary-fixed-dim hover:text-[#00171d] px-5 py-2.5 rounded-lg font-mono text-xs font-bold uppercase tracking-widest border border-primary-fixed-dim/30 transition-all duration-300 inline-flex items-center gap-2"
-              >
-                <span className="material-symbols-outlined text-sm">mail</span>
-                Get In Touch
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1jdWRinVUx5yf8GqUoDtmusDIqLQM1mVi/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-5 py-2.5 rounded-lg font-mono text-xs font-bold uppercase tracking-widest border border-white/10 transition-all duration-300 inline-flex items-center gap-2"
-              >
-                <span className="material-symbols-outlined text-sm">description</span>
-                Resume.pdf
-              </a>
-            </div>
           </div>
 
           {/* Quick HUD Metrics */}
