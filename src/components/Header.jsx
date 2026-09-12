@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 
 const Header = () => {
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#work' },
-    { name: 'Contact Me', href: '#contact' },
+    { name: 'About', href: '#about', icon: 'person' },
+    { name: 'Skills', href: '#skills', icon: 'terminal' },
+    { name: 'Projects', href: '#work', icon: 'folder_special' },
+    { name: 'Contact Me', href: '#contact', icon: 'alternate_email' },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Header = () => {
           SHIHABUL ISLAM
         </motion.div>
 
-        <nav className="hidden md:flex gap-6">
+        <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link, i) => (
             <motion.a
               key={link.name}
@@ -29,10 +29,13 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05, color: "#00e5ff" }}
-              className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold transition-colors duration-300 relative group"
+              className="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold transition-colors duration-300 relative group flex items-center gap-1.5 py-1"
               href={link.href}
             >
-              {link.name}
+              <span className="material-symbols-outlined text-[15px] text-primary-fixed-dim/60 group-hover:text-primary-fixed-dim transition-colors">
+                {link.icon}
+              </span>
+              <span>{link.name}</span>
               <motion.span
                 className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-fixed-dim transition-all group-hover:w-full"
               />
