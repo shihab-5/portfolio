@@ -2,65 +2,25 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Education = () => {
   const sectionRef = useRef(null);
-  const lineRef = useRef(null);
-
-  const qualifications = [
-    {
-      period: '2023 - PRESENT',
-      title: 'BSc in Computer Science & Engineering',
-      institution: 'Sylhet Engineering College',
-      active: true,
-    },
-    {
-      period: '2019 - 2021',
-      title: 'Higher Secondary Certificate',
-      institution: 'Abdul Kadir Mollah City College',
-      result: 'Result: GPA 5.00',
-      active: false,
-    },
-    {
-      period: 'GRADUATED 2019',
-      title: 'Secondary School Certificate',
-      institution: 'Nasima Kadir Mollah High School and Homes',
-      result: 'Result: GPA 5.00',
-      active: false,
-    },
-  ];
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate the vertical line
-      gsap.fromTo(lineRef.current, 
-        { scaleY: 0 },
-        { 
-          scaleY: 1, 
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top center",
-            end: "bottom center",
-            scrub: true
-          }
+      gsap.from(cardRef.current, {
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
         }
-      );
-
-      // Animate each qualification card
-      gsap.utils.toArray(".qual-card").forEach((card, i) => {
-        gsap.from(card, {
-          x: i % 2 === 0 ? -50 : 50,
-          opacity: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        });
       });
     }, sectionRef);
 
@@ -68,54 +28,71 @@ const Education = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="mb-16 py-10" id="quals">
-      <div className="mb-16 text-center">
-        <h3 className="text-4xl font-bold font-display uppercase tracking-widest italic text-cyber-gradient text-cyber-glow">
-          Academic_Protocol
+    <section ref={sectionRef} className="mb-16 py-10" id="education">
+      {/* Section Header */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        className="mb-8"
+      >
+        <h2 className="text-xs text-primary-fixed-dim tracking-[0.3em] uppercase mb-2 font-mono">
+          {"// 03. ACADEMIC_PROTOCOL"}
+        </h2>
+        <h3 className="text-3xl md:text-4xl font-bold font-display uppercase italic text-cyber-gradient text-cyber-glow">
+          Education
         </h3>
-        <div className="w-32 h-[2px] bg-primary-fixed-dim/30 mx-auto mt-4 relative overflow-hidden">
-          <div className="absolute inset-0 bg-primary-fixed-dim animate-scan"></div>
-        </div>
-      </div>
-      
-      <div className="relative max-w-4xl mx-auto">
-        {/* Animated Vertical Line */}
-        <div 
-          ref={lineRef}
-          className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-fixed-dim via-secondary-fixed-dim to-transparent origin-top"
-        ></div>
+      </motion.div>
 
-        <div className="space-y-12">
-          {qualifications.map((qual, index) => (
-            <div key={index} className="relative pl-24 qual-card group">
-              {/* Timeline Dot */}
-              <div className={`absolute left-6 top-2 w-4 h-4 rounded-full z-10 transition-all duration-500 ${qual.active ? 'bg-primary-fixed-dim shadow-[0_0_15px_#00e5ff] scale-125' : 'bg-outline group-hover:bg-primary-fixed-dim group-hover:shadow-[0_0_10px_#00e5ff]'}`}>
-                {qual.active && <div className="absolute inset-0 bg-primary-fixed-dim rounded-full animate-ping opacity-50"></div>}
-              </div>
+      {/* Single Education Card */}
+      <div ref={cardRef} className="relative">
+        <div className="glass-panel p-6 md:p-8 rounded-2xl border border-white/10 hover:border-primary-fixed-dim/40 transition-all duration-500 relative overflow-hidden bg-[#0d131a]/80 backdrop-blur-xl group">
+          
+          {/* Subtle Background Icon Accent */}
+          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+            <span className="material-symbols-outlined text-8xl text-primary-fixed-dim">
+              school
+            </span>
+          </div>
 
-              <div className="glass-panel p-8 rounded-xl border border-white/5 group-hover:border-primary-fixed-dim/30 transition-all duration-500 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                  <span className="material-symbols-outlined text-6xl">school</span>
-                </div>
-
-                <span className={`text-xs mb-3 block font-mono font-bold tracking-widest ${qual.active ? 'text-primary-fixed-dim' : 'text-on-surface-variant'}`}>
-                  {qual.period}
-                </span>
-                <h4 className="text-2xl font-bold mb-2 font-display tracking-tight text-white group-hover:text-primary-fixed-dim transition-colors">
-                  {qual.title}
-                </h4>
-                <p className="text-on-surface-variant font-mono text-sm leading-relaxed mb-2">
-                  {qual.institution}
-                </p>
-                {qual.result && (
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-fixed-dim/10 rounded-full border border-primary-fixed-dim/20">
-                    <span className="w-1.5 h-1.5 bg-primary-fixed-dim rounded-full"></span>
-                    <span className="text-primary-fixed-dim font-mono text-[10px] font-bold uppercase">{qual.result}</span>
-                  </div>
-                )}
-              </div>
+          {/* Header Row: Badge & Graduation Date */}
+          <div className="flex flex-wrap items-center gap-3 mb-4">
+            <span className="text-[10px] uppercase font-mono font-bold tracking-widest text-primary-fixed-dim bg-primary-fixed-dim/10 border border-primary-fixed-dim/30 px-3 py-1 rounded-md flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-xs">school</span>
+              EDUCATION
+            </span>
+            <div className="flex items-center gap-1.5 text-xs text-on-surface-variant font-mono">
+              <span className="material-symbols-outlined text-sm text-on-surface-variant/70">
+                calendar_today
+              </span>
+              <span>Graduation: 2027</span>
             </div>
-          ))}
+          </div>
+
+          {/* Degree Title */}
+          <h4 className="text-2xl md:text-3xl font-bold mb-2 font-display tracking-tight text-white group-hover:text-primary-fixed-dim transition-colors">
+            B.Sc. in Computer Science & Engineering
+          </h4>
+
+          {/* Institution & Location */}
+          <div className="flex flex-wrap items-center gap-2 mb-4 font-mono text-sm">
+            <span className="text-primary-fixed-dim font-semibold text-base">
+              Sylhet Engineering College
+            </span>
+            <span className="text-on-surface-variant/40">•</span>
+            <div className="flex items-center gap-1 text-on-surface-variant text-xs">
+              <span className="material-symbols-outlined text-xs text-on-surface-variant/70">
+                location_on
+              </span>
+              <span>Sylhet, Bangladesh</span>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-on-surface-variant font-mono text-sm md:text-base leading-relaxed max-w-3xl">
+            Building a strong foundation in data structures, algorithms, software engineering, databases, and web technologies — while shipping real-world projects alongside coursework.
+          </p>
+
         </div>
       </div>
     </section>
