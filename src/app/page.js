@@ -17,13 +17,12 @@ export default function Home() {
   return (
     <SmoothScroll>
       {loading && <Loader onComplete={() => setLoading(false)} />}
-      
+
       <div className={`transition-opacity duration-1000 ${loading ? 'opacity-0' : 'opacity-100'}`}>
         <Header />
         <main className="pt-28 pb-16">
           <div className="max-w-[1280px] mx-auto px-6">
             <Hero />
-            <Stack />
             <Skills />
             <Education />
             <Projects />
@@ -31,7 +30,7 @@ export default function Home() {
           </div>
         </main>
         <Footer />
-        
+
         {/* Mobile FAB */}
         <button className="fixed bottom-6 right-6 bg-secondary-container text-on-secondary-container p-4 rounded-full shadow-[0_0_20px_rgba(0,241,253,0.4)] z-50 hover:scale-110 active:scale-95 transition-all md:hidden">
           <span className="material-symbols-outlined">message</span>

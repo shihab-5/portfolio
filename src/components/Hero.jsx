@@ -10,6 +10,8 @@ const Hero = () => {
   const textRef = useRef(null);
   const ctaRef = useRef(null);
   const [roleIndex, setRoleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const roles = [
     "Full-Stack Developer",
@@ -20,11 +22,28 @@ const Hero = () => {
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const currentRole = roles[roleIndex];
+    let timer;
+
+    if (!isDeleting && displayedText.length < currentRole.length) {
+      timer = setTimeout(() => {
+        setDisplayedText(currentRole.substring(0, displayedText.length + 1));
+      }, 75);
+    } else if (!isDeleting && displayedText.length === currentRole.length) {
+      timer = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2000);
+    } else if (isDeleting && displayedText.length > 0) {
+      timer = setTimeout(() => {
+        setDisplayedText(currentRole.substring(0, displayedText.length - 1));
+      }, 35);
+    } else if (isDeleting && displayedText.length === 0) {
+      setIsDeleting(false);
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2800);
-    return () => clearInterval(timer);
-  }, []);
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayedText, isDeleting, roleIndex]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,27 +100,18 @@ const Hero = () => {
           <span className="text-on-surface-variant/50 tracking-widest shrink-0">
             {"// CURRENTLY_OPERATING_AS:"}
           </span>
-          <div className="relative h-6 overflow-hidden flex items-center flex-1 min-w-0">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={roles[roleIndex]}
-                initial={{ y: 20, opacity: 0, filter: "blur(6px)" }}
-                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                exit={{ y: -20, opacity: 0, filter: "blur(6px)" }}
-                transition={{ duration: 0.45, ease: "easeOut" }}
-                className="absolute whitespace-nowrap text-primary-fixed-dim font-bold tracking-wide"
-              >
-                {roles[roleIndex]}
-              </motion.span>
-            </AnimatePresence>
+          <div className="flex items-center min-w-0 min-h-[24px]">
+            <span className="text-primary-fixed-dim font-bold tracking-wide">
+              {displayedText}
+            </span>
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 0.8, repeat: Infinity }}
+              className="text-primary-fixed-dim font-bold text-base ml-0.5 shrink-0"
+            >
+              _
+            </motion.span>
           </div>
-          <motion.span
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ duration: 1, repeat: Infinity }}
-            className="text-primary-fixed-dim font-bold text-base shrink-0"
-          >
-            _
-          </motion.span>
         </div>
 
         <div ref={textRef} className="text-base text-on-surface-variant max-w-xl mb-10 leading-relaxed font-mono">
