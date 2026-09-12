@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 const Header = () => {
   const navLinks = [
+    { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#work' },
     { name: 'Contact Me', href: '#contact' },

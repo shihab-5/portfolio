@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Stack from "@/components/Stack";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
@@ -23,6 +24,7 @@ export default function Home() {
         <main className="pt-28 pb-16">
           <div className="max-w-[1280px] mx-auto px-6">
             <Hero />
+            <About />
             <Skills />
             <Education />
             <Projects />
